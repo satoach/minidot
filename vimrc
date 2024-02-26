@@ -26,7 +26,6 @@ set browsedir=current
 set diffopt+=vertical
 set formatoptions+=B
 set helplang=ja,en
-set history=127
 set tags=./tags;
 set clipboard=unnamedplus,autoselect
 set guioptions+=a
@@ -46,7 +45,6 @@ set modelines=3
 " search
 set ignorecase
 set smartcase
-set incsearch
 set hlsearch
 
 " tab to space
@@ -57,9 +55,6 @@ set softtabstop=0
 set expandtab   " use soft tab
 filetype plugin indent on
 
-set conceallevel=0
-set concealcursor=nc
-
 if executable('jvgrep')
     set grepprg=jvgrep
 endif
@@ -68,10 +63,10 @@ set list
 set listchars+=tab:>-\ ,eol:↲,trail:_,extends:»,precedes:«,nbsp:%
 set nowrap
 set showmatch
-set cursorline cursorcolumn
 set colorcolumn=+1,78,120
-set number relativenumber
+set number
 set spelllang=en,cjk
+let g:color_name="desert"
 " }}}
 " ========== gui =========={{{
 augroup GuiRunning
@@ -84,20 +79,6 @@ augroup GuiRunning
         " autocmd FocusGained * set transparency=235
         " autocmd FocusLost * set transparency=215
     endif
-augroup END
-" }}}
-" ========== xxd (binary mode) =========={{{
-" More detail, See :help hex-editing
-" vim -b : edit binary using xxd-format!
-augroup Binary
-	autocmd!
-	autocmd BufReadPre   *.bin,*.exe let &bin=1
-	autocmd BufReadPost  *.bin,*.exe if &bin | %!xxd
-	autocmd BufReadPost  *.bin,*.exe set ft=xxd | endif
-	autocmd BufWritePre  *.bin,*.exe if &bin | %!xxd -r
-	autocmd BufWritePre  *.bin,*.exe endif
-	autocmd BufWritePost *.bin,*.exe if &bin | %!xxd
-	autocmd BufWritePost *.bin,*.exe set nomod | endif
 augroup END
 " }}}
 " ========== quickfix =========={{{
