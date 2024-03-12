@@ -39,7 +39,6 @@ set noerrorbells
 " set completeopt=menuone,preview
 set completeopt=menu,preview
 set wildignore=*.o,*.obj,*.swp,*.zip,*.tar.gz,*.a
-let g:vim_indent_cont = 0
 set modelines=3
 
 " search
@@ -67,19 +66,6 @@ set colorcolumn=+1,78,120
 set number
 set spelllang=en,cjk
 let g:color_name="desert"
-" }}}
-" ========== gui =========={{{
-augroup GuiRunning
-    autocmd!
-    if has("gui_running")
-        set columns=100
-        set lines=32
-        set gfn=cica:h12
-        " autocmd GUIEnter * set transparency=235
-        " autocmd FocusGained * set transparency=235
-        " autocmd FocusLost * set transparency=215
-    endif
-augroup END
 " }}}
 " ========== quickfix =========={{{
 augroup MyQuickFix
