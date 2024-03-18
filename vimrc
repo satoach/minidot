@@ -62,7 +62,7 @@ set list
 set listchars+=tab:>-\ ,eol:↲,trail:_,extends:»,precedes:«,nbsp:%
 set nowrap
 set showmatch
-set colorcolumn=+1,78,120
+" set colorcolumn=+1,78,120
 set number
 set spelllang=en,cjk
 let g:color_name="desert"
